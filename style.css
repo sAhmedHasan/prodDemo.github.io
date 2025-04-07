@@ -1,0 +1,300 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0);
+
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background: none;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(3.png);
+    filter: blur(12px);
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px);
+    transform: scale(1.1); /* Push edges offscreen */
+    z-index: -1;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  
+    /* Initial hidden state for fade and slide */
+    opacity: 0;
+    transform: translateY(-100%);
+  
+    /* Transparent background */
+    background: rgba(255, 255, 255, 0);
+  
+    /* No glass styles here */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Fade + Slide transition */
+  }
+  
+  /* When the navbar is in view, it will slide in and fade in */
+  .navbar.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+  }
+  
+  .logo {
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-left: 5rem;
+  }
+
+  .contact a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 200;
+    background-color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 25px;
+    transition: background-color 0.2s;
+    display: inline-block;
+  }
+  
+  .contact a:hover {
+    background-color: #000000;
+    color: white;
+  }
+  
+.nav-links {
+    display: flex;
+    gap: 5.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0);
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 200;
+    transition: color 0.2s;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0);
+
+}
+
+.nav-links a:hover {
+    color: #b9ffc4;
+}
+  /* Main Layout */
+  .main-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 15rem;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+.spline-background {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* still behind the text, but interactive */
+}
+
+.spline-background1 {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* still behind the text, but interactive */
+}
+  spline-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+spline-viewer::part(branding) {
+    display: none;
+}
+  /* Text Overlay */
+  .text-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: white;
+    margin-top: 20%;
+
+    /* Initial hidden state for fade and slide */
+    opacity: 0;
+    transform: translateY(100%);
+    
+    /* Transparent background */
+    background: rgba(255, 255, 255, 0);
+    
+    /* No glass styles here */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Fade + Slide transition */
+  }
+  
+  .text-content.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+  }
+
+
+  .tagline {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtag {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+  }
+
+
+  .explore-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .explore-btn:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+
+  
+
+  .product-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(0px);
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Fade + Slide transition */
+  }
+
+  .product-row.visible {
+    opacity: 1;
+    transform: translateY(-40px); /* Slide into view */
+  }
+  
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 0.75rem;
+    max-width: 200px;
+  
+  }
+  
+
+  .btn-1 {
+    margin-top: 18rem; /* push it down more */
+
+  }
+  
+  .btn-2 {
+    margin-top: 18rem; /* standard */
+  }
+  
+  .btn-3 {
+    margin-top: 18rem; /* push it further down */
+  }
+  
+
+  .about-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding-top: 0rem; /* Reduced padding to bring it higher */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    pointer-events: none;
+  }
+  .about-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .about-text {
+    font-size: 1rem;
+    margin: 1rem 0 2rem;
+    line-height: 1.7;
+  }
+  
+  .tools-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
+  .tools-list li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    margin-top: -12rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    color: #f1f1f1; 
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    pointer-events: none;
+  }
+
+  .glass-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }

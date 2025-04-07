@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serum Dropper</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- ✅ Move this inside body -->
+  <div class="spline-background">
+    <spline-viewer url="https://prod.spline.design/5NhKBTMxajg1w5C9/scene.splinecode"></spline-viewer>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">HAMLET</div>
+    <div class="contact">
+      <a href="https://about.me/ahasan1" target="_blank">Contact Me</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.htm">Home</a>
+      <a href="about.htm">About</a>
+      <a href="catalog.htm">Catalog</a>
+    </div>
+  </nav>
+
+  <main class="main-section">
+    <div class="text-content">
+      <p class="tagline">Literally the best serum ever created.</p>
+      <p class="subtag">The best serum ever.</p>
+      <a href="catalog.htm" class="explore-btn">Explore Products</a>
+    </div>
+  </main>
+
+  <script>
+  // Wait for the page to fully load
+  window.addEventListener('load', function () {
+    const navbar = document.querySelector('.navbar');
+    const textContent = document.querySelector('.text-content');
+    
+    // Add 'visible' class to trigger the transition
+    setTimeout(() => {
+      navbar.classList.add('visible');
+      textContent.classList.add('visible');
+    }, 100); // Optional: delay for better effect
+  });
+</script>
+
+</body>
+</html>

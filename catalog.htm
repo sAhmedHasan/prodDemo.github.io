@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serum Dropper</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- ✅ Move this inside body -->
+  <div class="spline-background1">
+    <spline-viewer url="https://prod.spline.design/x8IFs8T9xFIGLej9/scene.splinecode"></spline-viewer>
+  </div>
+
+  
+
+
+
+
+  <nav class="navbar">
+    <div class="logo">HAMLET</div>
+    <div class="contact">
+      <a href="https://about.me/ahasan1" target="_blank">Contact Me</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.htm">Home</a>
+      <a href="about.htm">About</a>
+      <a href="catalog.htm">Catalog</a>
+    </div>
+  </nav>
+
+  <main class="main-section">
+    <div class="product-row">
+  
+        <div class="product-card btn-1">
+            <p class="tagline">Product 1</p>
+            <p class="subtag">The best serum ever.</p>
+            <!-- <button class="explore-btn">Add to Cart</button> -->
+          </div>
+          
+          <div class="product-card btn-2">
+            <p class="tagline">Product 2</p>
+            <p class="subtag">The 2nd best serum ever.</p>
+            <!-- <button class="explore-btn">Add to Cart</button> -->
+          </div>
+          
+          <div class="product-card btn-3">
+            <p class="tagline">Product 3</p>
+            <p class="subtag">The 3rd best serum ever.</p>
+            <!-- <button class="explore-btn">Add to Cart</button> -->
+          </div>
+          
+  
+    </div>
+  </main>
+
+  <script>
+  // Wait for the page to fully load
+  window.addEventListener('load', function () {
+    const navbar = document.querySelector('.navbar');
+    const productrow = document.querySelector('.product-row');
+    
+    // Add 'visible' class to trigger the transition
+    setTimeout(() => {
+      navbar.classList.add('visible');
+      productrow.classList.add('visible');
+    }, 100); // Optional: delay for better effect
+  });
+
+
+</script>
+
+</body>
+</html>
